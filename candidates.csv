@@ -1,0 +1,51 @@
+candidate_id,name,age,education,skills,sector_interest,location_pref_state,location_pref_district,family_income
+1,Nisha Kumari,21,Graduate,Statistics; Customer Service; Teaching,Mechanical,Uttar Pradesh,Thiruvananthapuram,200000
+2,Simran Kaur,22,Graduate,Electrical Circuits; SolidWorks,Food Tech,Uttar Pradesh,Patna,800000
+3,Neha Joshi,21,Graduate,Pharmacology; Java,Education,Delhi,Bhopal,200000
+4,Deepak Sahu,24,Diploma,Teaching; SolidWorks; Pharmacology; Web Development,Agriculture,Delhi,Delhi,200000
+5,Shreya Bose,21,Graduate,Data Analysis; Statistics; Excel; Project Management,Civil,Kerala,Ahmedabad,800000
+6,Aman Gupta,24,Graduate,Writing; C++,Pharma,Bihar,Patna,600000
+7,Deepak Sahu,21,Graduate,CAD; Excel; SQL; Marketing,Commerce,Kerala,Bhopal,800000
+8,Meera Pillai,24,Diploma,Data Analysis; SolidWorks; C++,Civil,Bihar,Kolkata,400000
+9,Divya Nair,22,Class 10,Electrical Circuits; Accounting; Customer Service; Communication,Textile,Tamil Nadu,Bhopal,200000
+10,Simran Kaur,22,Graduate,Communication; Writing,Food Tech,Delhi,Mumbai,400000
+11,Riya Singh,21,Class 10,SolidWorks; Marketing,Agriculture,Karnataka,Lucknow,600000
+12,Nisha Kumari,23,Class 10,SQL; Accounting,Media,West Bengal,Bengaluru,400000
+13,Nisha Kumari,21,Graduate,Web Development; Writing; Java,Automobile,Bihar,Delhi,800000
+14,Meera Pillai,23,Class 10,C++; Data Analysis; Web Development,Agriculture,Delhi,Ahmedabad,400000
+15,Ankit Das,23,Class 10,CAD; Research; Writing; Accounting,Education,Tamil Nadu,Thiruvananthapuram,400000
+16,Riya Singh,23,Class 10,Accounting; Marketing; Pharmacology; SolidWorks,Healthcare,Kerala,Thiruvananthapuram,200000
+17,Neha Joshi,21,Graduate,Teaching; Statistics; Marketing; Pharmacology,Social Work,West Bengal,Lucknow,600000
+18,Pooja Iyer,22,Graduate,SolidWorks; Marketing; Public Speaking; Data Analysis,Civil,Uttar Pradesh,Ahmedabad,200000
+19,Kunal Mehta,21,Graduate,Marketing; Accounting; SQL,Media,Maharashtra,Kolkata,400000
+20,Shreya Bose,21,Graduate,SQL; Chemistry; Java,Telecom,Bihar,Lucknow,200000
+21,Kunal Mehta,24,Diploma,Research; CAD; C++; Project Management,IT/Data,Madhya Pradesh,Mumbai,600000
+22,Arjun Reddy,23,Diploma,Biology; Communication,Telecom,Tamil Nadu,Lucknow,600000
+23,Ankit Das,23,Class 10,C++; Machine Learning; Public Speaking,Environment,Bihar,Chennai,400000
+24,Aditi Sharma,22,Diploma,Machine Learning; Statistics; Python; Java,Energy,Bihar,Thiruvananthapuram,800000
+25,Ravi Yadav,24,Class 10,Writing; Cybersecurity; Customer Service; Teaching,Electrical,Madhya Pradesh,Chennai,800000
+26,Ankit Das,22,Class 10,Project Management; Java,Telecom,West Bengal,Patna,600000
+27,Vikram Chauhan,22,Diploma,Machine Learning; Web Development,Automobile,Madhya Pradesh,Bengaluru,600000
+28,Simran Kaur,24,Diploma,Pharmacology; Marketing,Environment,Uttar Pradesh,Delhi,800000
+29,Arjun Reddy,21,Class 10,Data Analysis; Writing; Excel; CAD,Aerospace,Delhi,Ahmedabad,400000
+30,Divya Nair,24,Graduate,Communication; Teaching,Food Tech,Tamil Nadu,Ahmedabad,200000
+31,Simran Kaur,23,Graduate,Public Speaking; Python,Commerce,West Bengal,Mumbai,800000
+32,Ravi Yadav,21,Class 10,Cybersecurity; Electrical Circuits; Communication; SQL,Design,Delhi,Chennai,400000
+33,Nisha Kumari,24,Class 10,SolidWorks; CAD; Excel; Electrical Circuits,Civil,Uttar Pradesh,Patna,400000
+34,Meera Pillai,24,Class 10,Project Management; Marketing; Pharmacology,Healthcare,Tamil Nadu,Mumbai,200000
+35,Pooja Iyer,23,Diploma,Web Development; Machine Learning; Marketing,Civil,Delhi,Chennai,800000
+36,Kunal Mehta,24,Diploma,Web Development; Customer Service,Civil,Karnataka,Thiruvananthapuram,200000
+37,Riya Singh,21,Class 10,Writing; Communication; Project Management,Education,Tamil Nadu,Delhi,200000
+38,Arjun Reddy,24,Graduate,Accounting; Marketing,Law,Delhi,Patna,400000
+39,Pooja Iyer,22,Graduate,Project Management; Electrical Circuits,Design,Delhi,Kolkata,600000
+40,Nisha Kumari,22,Diploma,Communication; Customer Service; Biology,Education,Tamil Nadu,Kolkata,200000
+41,Aman Gupta,23,Graduate,Machine Learning; Cybersecurity,Agriculture,Uttar Pradesh,Ahmedabad,800000
+42,Neha Joshi,21,Class 10,Electrical Circuits; Biology; C++,Education,Gujarat,Patna,600000
+43,Vikram Chauhan,24,Class 10,Research; Web Development; Marketing; Machine Learning,Food Tech,Delhi,Bengaluru,600000
+44,Kunal Mehta,22,Diploma,Project Management; Communication; Pharmacology; Data Analysis,Automobile,Madhya Pradesh,Ahmedabad,400000
+45,Divya Nair,22,Diploma,Biology; Java; SolidWorks,Energy,Gujarat,Kolkata,800000
+46,Simran Kaur,22,Diploma,Data Analysis; Public Speaking; SQL,Civil,Madhya Pradesh,Bhopal,800000
+47,Nisha Kumari,21,Diploma,Chemistry; Research; Electrical Circuits; Project Management,IT/Data,Uttar Pradesh,Chennai,800000
+48,Simran Kaur,21,Graduate,Data Analysis; Project Management; Research; C++,Design,Gujarat,Bengaluru,400000
+49,Deepak Sahu,23,Class 10,Customer Service; Project Management; Writing,Finance,Tamil Nadu,Lucknow,400000
+50,Kunal Mehta,21,Diploma,C++; Accounting,Design,Delhi,Thiruvananthapuram,200000

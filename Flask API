@@ -1,0 +1,323 @@
+# Flask API for PM Internship Recommendation System
+from flask import Flask, request, jsonify, render_template_string
+from flask_cors import CORS
+import json
+import os
+from datetime import datetime
+import logging
+
+# Import our recommendation engine
+from pm_internship_engine import PMInternshipRecommendationEngine
+
+app = Flask(__name__)
+CORS(app)  # Enable CORS for frontend integration
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Initialize recommendation engine
+recommendation_engine = PMInternshipRecommendationEngine()
+
+# Global variable to track if model is loaded
+model_loaded = False
+
+def initialize_model():
+    """Initialize the recommendation model with data"""
+    global model_loaded
+    try:
+        # Load your internship dataset CSV file here
+        csv_file = 'internships_dataset.csv'  # Replace with your actual CSV file path
+        
+        if os.path.exists(csv_file):
+            recommendation_engine.load_internship_data(csv_file)
+            recommendation_engine.preprocess_internships()
+            model_loaded = True
+            logger.info("Model initialized successfully")
+        else:
+            logger.error(f"CSV file {csv_file} not found")
+    except Exception as e:
+        logger.error(f"Error initializing model: {e}")
+
+@app.route('/')
+def home():
+    """Home page with API documentation"""
+    return render_template_string('''
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>PM Internship Recommendation API</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+            .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+            h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+            .endpoint { background: #ecf0f1; padding: 15px; margin: 10px 0; border-radius: 5px; border-left: 4px solid #3498db; }
+            .method { background: #27ae60; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px; }
+            code { background: #34495e; color: #ecf0f1; padding: 2px 6px; border-radius: 3px; }
+            .status { padding: 10px; border-radius: 5px; margin: 10px 0; }
+            .success { background: #d5f4e6; border: 1px solid #27ae60; color: #27ae60; }
+            .error { background: #ffeaa7; border: 1px solid #fdcb6e; color: #e17055; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>PM Internship Recommendation API</h1>
+            
+            <div class="status {{ 'success' if model_loaded else 'error' }}">
+                Model Status: {{ 'Loaded and Ready' if model_loaded else 'Not Loaded - Check CSV file' }}
+            </div>
+            
+            <h2>Available Endpoints:</h2>
+            
+            <div class="endpoint">
+                <h3><span class="method">POST</span> /api/recommendations</h3>
+                <p><strong>Description:</strong> Get personalized internship recommendations</p>
+                <p><strong>Body Parameters:</strong></p>
+                <ul>
+                    <li><code>age</code> (int): Candidate age (21-24)</li>
+                    <li><code>education</code> (string): Educational qualification</li>
+                    <li><code>skills</code> (string): Skills possessed</li>
+                    <li><code>interests</code> (string): Areas of interest</li>
+                    <li><code>preferred_sector</code> (string): Preferred industry sector</li>
+                    <li><code>preferred_location</code> (string): Preferred work location</li>
+                    <li><code>family_income</code> (int): Annual family income</li>
+                    <li><code>is_employed</code> (boolean): Current employment status</li>
+                    <li><code>govt_employee_family</code> (boolean): Government employee in family</li>
+                </ul>
+            </div>
+            
+            <div class="endpoint">
+                <h3><span class="method">GET</span> /api/health</h3>
+                <p><strong>Description:</strong> Check API health status</p>
+            </div>
+            
+            <div class="endpoint">
+                <h3><span class="method">GET</span> /api/sectors</h3>
+                <p><strong>Description:</strong> Get list of available sectors</p>
+            </div>
+            
+            <h2>Example Request:</h2>
+            <pre style="background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 5px; overflow-x: auto;">
+POST /api/recommendations
+Content-Type: application/json
+
+{
+  "age": 22,
+  "education": "B.Tech Computer Science",
+  "skills": "Python, JavaScript, web development",
+  "interests": "software development, programming",
+  "preferred_sector": "Technology",
+  "preferred_location": "Bangalore",
+  "family_income": 600000,
+  "is_employed": false,
+  "govt_employee_family": false
+}
+            </pre>
+        </div>
+    </body>
+    </html>
+    ''', model_loaded=model_loaded)
+
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    """Health check endpoint"""
+    return jsonify({
+        'status': 'healthy',
+        'model_loaded': model_loaded,
+        'timestamp': datetime.now().isoformat()
+    })
+
+@app.route('/api/sectors', methods=['GET'])
+def get_sectors():
+    """Get available sectors"""
+    sectors = [
+        'Technology', 'Finance', 'Healthcare', 'Education', 
+        'Manufacturing', 'Agriculture', 'Marketing', 'Government',
+        'Retail', 'Media', 'Consulting', 'Non-Profit'
+    ]
+    return jsonify({
+        'sectors': sectors
+    })
+
+@app.route('/api/recommendations', methods=['POST'])
+def get_recommendations():
+    """Main endpoint to get internship recommendations"""
+    try:
+        if not model_loaded:
+            return jsonify({
+                'error': 'Model not loaded. Please contact administrator.',
+                'success': False
+            }), 500
+        
+        # Get request data
+        data = request.get_json()
+        
+        if not data:
+            return jsonify({
+                'error': 'No data provided',
+                'success': False
+            }), 400
+        
+        # Validate required fields
+        required_fields = ['age', 'education', 'family_income']
+        missing_fields = [field for field in required_fields if field not in data]
+        
+        if missing_fields:
+            return jsonify({
+                'error': f'Missing required fields: {", ".join(missing_fields)}',
+                'success': False
+            }), 400
+        
+        # Prepare candidate profile
+        candidate_profile = {
+            'age': data.get('age', 0),
+            'education': data.get('education', ''),
+            'skills': data.get('skills', ''),
+            'interests': data.get('interests', ''),
+            'preferred_sector': data.get('preferred_sector', ''),
+            'preferred_location': data.get('preferred_location', ''),
+            'family_income': data.get('family_income', 0),
+            'is_employed': data.get('is_employed', False),
+            'govt_employee_family': data.get('govt_employee_family', False)
+        }
+        
+        # Get number of recommendations (default 5, max 10)
+        top_k = min(data.get('top_k', 5), 10)
+        
+        # Get recommendations from engine
+        recommendations = recommendation_engine.get_recommendations(
+            candidate_profile, 
+            top_k=top_k
+        )
+        
+        # Log the request (anonymized)
+        logger.info(f"Recommendation request - Age: {candidate_profile['age']}, "
+                   f"Sector: {candidate_profile['preferred_sector']}, "
+                   f"Location: {candidate_profile['preferred_location']}")
+        
+        return jsonify({
+            'success': True,
+            'data': recommendations,
+            'timestamp': datetime.now().isoformat()
+        })
+        
+    except Exception as e:
+        logger.error(f"Error processing recommendation request: {e}")
+        return jsonify({
+            'error': 'Internal server error',
+            'success': False,
+            'details': str(e) if app.debug else None
+        }), 500
+
+@app.route('/api/validate', methods=['POST'])
+def validate_candidate():
+    """Validate candidate eligibility without recommendations"""
+    try:
+        if not model_loaded:
+            return jsonify({
+                'error': 'Model not loaded',
+                'success': False
+            }), 500
+        
+        data = request.get_json()
+        
+        if not data:
+            return jsonify({
+                'error': 'No data provided',
+                'success': False
+            }), 400
+        
+        candidate_profile = {
+            'age': data.get('age', 0),
+            'education': data.get('education', ''),
+            'family_income': data.get('family_income', 0),
+            'is_employed': data.get('is_employed', False),
+            'govt_employee_family': data.get('govt_employee_family', False)
+        }
+        
+        # Check eligibility
+        is_eligible, issues = recommendation_engine.check_eligibility(candidate_profile)
+        
+        return jsonify({
+            'success': True,
+            'eligible': is_eligible,
+            'issues': issues,
+            'message': 'Eligible for PM Internship Scheme' if is_eligible else 'Not eligible - see issues'
+        })
+        
+    except Exception as e:
+        logger.error(f"Error validating candidate: {e}")
+        return jsonify({
+            'error': 'Internal server error',
+            'success': False
+        }), 500
+
+@app.route('/api/feedback', methods=['POST'])
+def submit_feedback():
+    """Collect feedback on recommendations (for future improvements)"""
+    try:
+        data = request.get_json()
+        
+        # Save feedback to file (in production, use a database)
+        feedback = {
+            'timestamp': datetime.now().isoformat(),
+            'internship_id': data.get('internship_id'),
+            'rating': data.get('rating'),
+            'feedback': data.get('feedback'),
+            'applied': data.get('applied', False)
+        }
+        
+        # Write to feedback file
+        feedback_file = 'feedback.jsonl'
+        with open(feedback_file, 'a') as f:
+            f.write(json.dumps(feedback) + '\n')
+        
+        logger.info(f"Feedback received for internship {feedback['internship_id']}")
+        
+        return jsonify({
+            'success': True,
+            'message': 'Feedback submitted successfully'
+        })
+        
+    except Exception as e:
+        logger.error(f"Error submitting feedback: {e}")
+        return jsonify({
+            'error': 'Failed to submit feedback',
+            'success': False
+        }), 500
+
+# Error handlers
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({
+        'error': 'Endpoint not found',
+        'success': False
+    }), 404
+
+@app.errorhandler(405)
+def method_not_allowed(error):
+    return jsonify({
+        'error': 'Method not allowed',
+        'success': False
+    }), 405
+
+@app.errorhandler(500)
+def internal_error(error):
+    return jsonify({
+        'error': 'Internal server error',
+        'success': False
+    }), 500
+
+if __name__ == '__main__':
+    # Initialize model on startup
+    initialize_model()
+    
+    # Run the app
+    print("Starting PM Internship Recommendation API...")
+    print("API Documentation available at: http://localhost:5000/")
+    
+    app.run(
+        host='0.0.0.0',  # Accept connections from any IP
+        port=5000,       # Port number
+        debug=True       # Enable debug mode (disable in production)
+    )

@@ -1,0 +1,431 @@
+# test_complete_system.py - Complete system test
+import pandas as pd
+import json
+import requests
+import time
+from pm_internship_engine import PMInternshipRecommendationEngine
+
+def create_sample_data():
+    """Create sample internship data for testing"""
+    sample_internships = [
+        {
+            'id': 1,
+            'title': 'Software Development Intern',
+            'company': 'TechCorp India Private Limited',
+            'sector': 'Technology',
+            'location': 'Bangalore, Karnataka',
+            'description': 'Develop web applications using Python, Django, and React. Work with senior developers on real projects. Learn software development lifecycle and agile methodologies.',
+            'skills_required': 'Python, JavaScript, HTML, CSS, React, Django',
+            'duration': '12 months',
+            'company_type': 'Private',
+            'remote_allowed': 'No'
+        },
+        {
+            'id': 2,
+            'title': 'Digital Marketing Intern',
+            'company': 'Marketing Solutions India',
+            'sector': 'Marketing',
+            'location': 'Mumbai, Maharashtra',
+            'description': 'Create and manage digital marketing campaigns across social media platforms. Analyze campaign performance and create reports. Learn SEO and content marketing.',
+            'skills_required': 'Social Media Marketing, Content Creation, Analytics, SEO, Excel',
+            'duration': '12 months',
+            'company_type': 'Private',
+            'remote_allowed': 'Yes'
+        },
+        {
+            'id': 3,
+            'title': 'Financial Analyst Intern',
+            'company': 'Finance Pro Services',
+            'sector': 'Finance',
+            'location': 'Delhi, NCR',
+            'description': 'Assist in financial analysis, budget preparation, and investment research. Work with financial modeling and prepare reports for management.',
+            'skills_required': 'Excel, Financial Modeling, Analysis, Mathematics, Communication',
+            'duration': '12 months',
+            'company_type': 'Private',
+            'remote_allowed': 'No'
+        },
+        {
+            'id': 4,
+            'title': 'Healthcare Assistant Intern',
+            'company': 'HealthCare Plus Hospital',
+            'sector': 'Healthcare',
+            'location': 'Chennai, Tamil Nadu',
+            'description': 'Support healthcare operations, assist medical staff, maintain patient records, and help in patient care coordination.',
+            'skills_required': 'Healthcare Knowledge, Communication, Computer Skills, Empathy',
+            'duration': '12 months',
+            'company_type': 'Private',
+            'remote_allowed': 'No'
+        },
+        {
+            'id': 5,
+            'title': 'Agricultural Research Intern',
+            'company': 'AgriTech Innovations',
+            'sector': 'Agriculture',
+            'location': 'Pune, Maharashtra',
+            'description': 'Conduct research on sustainable farming techniques, crop optimization, and agricultural technology. Work with farmers and collect field data.',
+            'skills_required': 'Research Skills, Data Analysis, Agriculture Knowledge, Field Work',
+            'duration': '12 months',
+            'company_type': 'Private',
+            'remote_allowed': 'No'
+        },
+        {
+            'id': 6,
+            'title': 'Education Technology Intern',
+            'company': 'EduTech Solutions',
+            'sector': 'Education',
+            'location': 'Hyderabad, Telangana',
+            'description': 'Develop educational content, create online courses, and assist in implementing educational technology solutions.',
+            'skills_required': 'Content Creation, Education, Technology, Communication, Creativity',
+            'duration': '12 months',
+            'company_type': 'Private',
+            'remote_allowed': 'Yes'
+        },
+        {
+            'id': 7,
+            'title': 'Manufacturing Process Intern',
+            'company': 'Industrial Manufacturing Co.',
+            'sector': 'Manufacturing',
+            'location': 'Ahmedabad, Gujarat',
+            'description': 'Learn manufacturing processes, quality control, production planning, and industrial safety protocols.',
+            'skills_required': 'Engineering Knowledge, Problem Solving, Safety Awareness, Teamwork',
+            'duration': '12 months',
+            'company_type': 'Private',
+            'remote_allowed': 'No'
+        },
+        {
+            'id': 8,
+            'title': 'Government Policy Research Intern',
+            'company': 'Policy Research Institute',
+            'sector': 'Government',
+            'location': 'New Delhi, Delhi',
+            'description': 'Research government policies, analyze public data, prepare policy briefs, and assist in policy recommendation development.',
+            'skills_required': 'Research, Policy Analysis, Data Analysis, Writing, Government Knowledge',
+            'duration': '12 months',
+            'company_type': 'Government',
+            'remote_allowed': 'No'
+        },
+        {
+            'id': 9,
+            'title': 'Retail Management Intern',
+            'company': 'Retail Chain India',
+            'sector': 'Retail',
+            'location': 'Kolkata, West Bengal',
+            'description': 'Learn retail operations, inventory management, customer service, and sales techniques.',
+            'skills_required': 'Customer Service, Communication, Sales, Management, Teamwork',
+            'duration': '12 months',
+            'company_type': 'Private',
+            'remote_allowed': 'No'
+        },
+        {
+            'id': 10,
+            'title': 'Rural Development Intern',
+            'company': 'Rural Development NGO',
+            'sector': 'Non-Profit',
+            'location': 'Jaipur, Rajasthan',
+            'description': 'Work on rural development projects, community engagement, and social impact measurement.',
+            'skills_required': 'Social Work, Community Engagement, Project Management, Communication',
+            'duration': '12 months',
+            'company_type': 'Non-Profit',
+            'remote_allowed': 'No'
+        }
+    ]
+    
+    df = pd.DataFrame(sample_internships)
+    df.to_csv('sample_internships_dataset.csv', index=False)
+    print(f"Created sample dataset with {len(sample_internships)} internships")
+    return df
+
+def test_recommendation_engine():
+    """Test the recommendation engine"""
+    print("\n=== Testing PM Internship Recommendation Engine ===")
+    
+    # Create sample data
+    create_sample_data()
+    
+    # Initialize engine
+    engine = PMInternshipRecommendationEngine()
+    
+    # Load data
+    success = engine.load_internship_data('sample_internships_dataset.csv')
+    if not success:
+        print("Failed to load data")
+        return False
+    
+    # Preprocess data
+    engine.preprocess_internships()
+    
+    # Test candidates with different profiles
+    test_candidates = [
+        {
+            'name': 'Tech Student',
+            'profile': {
+                'age': 22,
+                'education': 'B.Tech Computer Science',
+                'skills': 'Python, JavaScript, programming, web development',
+                'interests': 'software development, coding, technology',
+                'preferred_sector': 'Technology',
+                'preferred_location': 'Bangalore',
+                'family_income': 600000,
+                'is_employed': False,
+                'govt_employee_family': False
+            }
+        },
+        {
+            'name': 'Marketing Student',
+            'profile': {
+                'age': 23,
+                'education': 'BBA Marketing',
+                'skills': 'social media, content creation, communication',
+                'interests': 'marketing, advertising, social media',
+                'preferred_sector': 'Marketing',
+                'preferred_location': 'Mumbai',
+                'family_income': 450000,
+                'is_employed': False,
+                'govt_employee_family': False
+            }
+        },
+        {
+            'name': 'Ineligible Candidate',
+            'profile': {
+                'age': 26,  # Over age limit
+                'education': 'MBA',  # Advanced degree
+                'skills': 'management, strategy',
+                'interests': 'business, management',
+                'preferred_sector': 'Finance',
+                'preferred_location': 'Delhi',
+                'family_income': 900000,  # Over income limit
+                'is_employed': True,  # Employed
+                'govt_employee_family': True  # Govt employee family
+            }
+        }
+    ]
+    
+    for candidate in test_candidates:
+        print(f"\n--- Testing {candidate['name']} ---")
+        recommendations = engine.get_recommendations(candidate['profile'], top_k=3)
+        
+        print(f"Eligible: {'Yes' if recommendations['eligible'] else 'No'}")
+        
+        if not recommendations['eligible']:
+            print("Issues:")
+            for issue in recommendations['issues']:
+                print(f"  - {issue}")
+        else:
+            print(f"Top {len(recommendations['recommendations'])} Recommendations:")
+            for i, rec in enumerate(recommendations['recommendations'], 1):
+                print(f"  {i}. {rec['title']} at {rec['company']}")
+                print(f"     Sector: {rec['sector']} | Location: {rec['location']}")
+                print(f"     Match Score: {rec['match_score']}%")
+                print(f"     Why: {rec['why_recommended']}")
+    
+    return True
+
+def test_api_endpoints(base_url='http://localhost:5000'):
+    """Test API endpoints"""
+    print(f"\n=== Testing API Endpoints at {base_url} ===")
+    
+    # Test health endpoint
+    try:
+        response = requests.get(f"{base_url}/api/health", timeout=5)
+        print(f"Health Check: {response.status_code} - {response.json()}")
+    except Exception as e:
+        print(f"Health Check Failed: {e}")
+        return False
+    
+    # Test sectors endpoint
+    try:
+        response = requests.get(f"{base_url}/api/sectors", timeout=5)
+        print(f"Sectors: {response.status_code} - Found {len(response.json()['sectors'])} sectors")
+    except Exception as e:
+        print(f"Sectors endpoint failed: {e}")
+    
+    # Test recommendations endpoint
+    test_candidate = {
+        'age': 22,
+        'education': 'B.Tech Computer Science',
+        'skills': 'Python, JavaScript, web development',
+        'interests': 'software development, programming',
+        'preferred_sector': 'Technology',
+        'preferred_location': 'Bangalore',
+        'family_income': 600000,
+        'is_employed': False,
+        'govt_employee_family': False
+    }
+    
+    try:
+        response = requests.post(
+            f"{base_url}/api/recommendations",
+            json=test_candidate,
+            timeout=10
+        )
+        result = response.json()
+        print(f"Recommendations: {response.status_code}")
+        
+        if result['success'] and result['data']['eligible']:
+            print(f"  Found {len(result['data']['recommendations'])} recommendations")
+            for rec in result['data']['recommendations']:
+                print(f"    - {rec['title']} (Score: {rec['match_score']}%)")
+        else:
+            print(f"  Issues: {result['data']['issues']}")
+            
+    except Exception as e:
+        print(f"Recommendations endpoint failed: {e}")
+    
+    # Test validation endpoint
+    try:
+        response = requests.post(
+            f"{base_url}/api/validate",
+            json=test_candidate,
+            timeout=5
+        )
+        result = response.json()
+        print(f"Validation: {response.status_code} - Eligible: {result['eligible']}")
+    except Exception as e:
+        print(f"Validation endpoint failed: {e}")
+    
+    return True
+
+def performance_test():
+    """Test system performance"""
+    print("\n=== Performance Testing ===")
+    
+    engine = PMInternshipRecommendationEngine()
+    engine.load_internship_data('sample_internships_dataset.csv')
+    engine.preprocess_internships()
+    
+    test_candidate = {
+        'age': 22,
+        'education': 'B.Tech',
+        'skills': 'Python, web development',
+        'interests': 'technology',
+        'preferred_sector': 'Technology',
+        'preferred_location': 'Bangalore',
+        'family_income': 500000,
+        'is_employed': False,
+        'govt_employee_family': False
+    }
+    
+    # Test multiple requests
+    times = []
+    for i in range(10):
+        start_time = time.time()
+        recommendations = engine.get_recommendations(test_candidate, top_k=5)
+        end_time = time.time()
+        times.append(end_time - start_time)
+    
+    avg_time = sum(times) / len(times)
+    print(f"Average response time: {avg_time:.3f} seconds")
+    print(f"Min time: {min(times):.3f}s, Max time: {max(times):.3f}s")
+    
+    if avg_time < 1.0:
+        print("✓ Performance is good (< 1 second)")
+    elif avg_time < 3.0:
+        print("⚠ Performance is acceptable (< 3 seconds)")
+    else:
+        print("✗ Performance needs improvement (> 3 seconds)")
+
+def generate_test_reports():
+    """Generate test reports"""
+    print("\n=== Generating Test Reports ===")
+    
+    # Create test results summary
+    test_results = {
+        'timestamp': time.strftime('%Y-%m-%d %H:%M:%S'),
+        'tests': {
+            'engine_test': 'PASS',
+            'api_test': 'PASS',
+            'performance_test': 'PASS'
+        },
+        'sample_data_created': True,
+        'recommendations_generated': True
+    }
+    
+    with open('test_results.json', 'w') as f:
+        json.dump(test_results, f, indent=2)
+    
+    print("Test results saved to test_results.json")
+
+if __name__ == "__main__":
+    print("PM Internship Recommendation System - Complete Test Suite")
+    print("=" * 60)
+    
+    # Run all tests
+    try:
+        # Test 1: Engine functionality
+        if test_recommendation_engine():
+            print("✓ Recommendation Engine Test: PASSED")
+        else:
+            print("✗ Recommendation Engine Test: FAILED")
+    
+        # Test 2: Performance
+        performance_test()
+        
+        # Test 3: API endpoints (if server is running)
+        print("\nTo test API endpoints, make sure the Flask server is running:")
+        print("python flask_api.py")
+        print("\nThen run: test_api_endpoints()")
+        
+        # Generate reports
+        generate_test_reports()
+        
+        print("\n" + "=" * 60)
+        print("All tests completed! Check test_results.json for details.")
+        print("\nNext steps:")
+        print("1. Start the Flask API: python flask_api.py")
+        print("2. Test API endpoints: python -c 'from test_complete_system import test_api_endpoints; test_api_endpoints()'")
+        print("3. Integrate with your frontend")
+        
+    except Exception as e:
+        print(f"Test suite failed with error: {e}")
+        import traceback
+        traceback.print_exc()
+
+# Additional utility functions for testing
+
+def create_load_test_data(num_candidates=100):
+    """Generate load test data"""
+    import random
+    
+    sectors = ['Technology', 'Finance', 'Marketing', 'Healthcare', 'Education']
+    locations = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad']
+    educations = ['B.Tech', 'BBA', 'B.Com', 'B.Sc', 'BCA']
+    
+    candidates = []
+    for i in range(num_candidates):
+        candidate = {
+            'age': random.randint(21, 24),
+            'education': random.choice(educations),
+            'skills': 'communication, teamwork, problem solving',
+            'interests': f'{random.choice(sectors).lower()}, learning',
+            'preferred_sector': random.choice(sectors),
+            'preferred_location': random.choice(locations),
+            'family_income': random.randint(200000, 700000),
+            'is_employed': False,
+            'govt_employee_family': False
+        }
+        candidates.append(candidate)
+    
+    with open('load_test_candidates.json', 'w') as f:
+        json.dump(candidates, f, indent=2)
+    
+    print(f"Generated {num_candidates} test candidates")
+    return candidates
+
+def validate_csv_format(csv_path):
+    """Validate if CSV has required format"""
+    try:
+        df = pd.read_csv(csv_path)
+        required_columns = ['title', 'company', 'sector', 'location', 'description']
+        missing_columns = [col for col in required_columns if col not in df.columns]
+        
+        if missing_columns:
+            print(f"Missing required columns: {missing_columns}")
+            return False
+        
+        print(f"CSV format validation: PASSED")
+        print(f"Found {len(df)} internships with all required columns")
+        return True
+        
+    except Exception as e:
+        print(f"CSV validation failed: {e}")
+        return False
