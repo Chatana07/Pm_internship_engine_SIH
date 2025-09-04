@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test AI Recommendations</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></script>
+</head>
+<body>
+    <h1>Test AI Recommendations</h1>
+    <button id="testBtn">Test AI Recommendations</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('testBtn').addEventListener('click', async function() {
+            const test_data = {
+                "name": "John Doe",
+                "citizenship": "Indian",
+                "age": 22,
+                "eduMin": "B.Tech Computer Science",
+                "skills": "Python, Django, HTML, CSS, JavaScript",
+                "domain": "Web Development",
+                "location": "Bangalore",
+                "duration": "12 Months",
+                "edu": "Not in full-time",
+                "income": "Up to ₹8,00,000",
+                "aadhaarLink": "yes",
+                "govtJob": "no"
+            };
+
+            try {
+                const response = await fetch('http://localhost:5000/ai_recommend', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(test_data)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log(result);
+                
+                // Display results
+                displayRecommendations(result);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('result').innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        });
+
+        function displayRecommendations(result) {
+            // Create a modal or new page to display results
+            const recommendationsHTML = `
+                <div class="recommendations-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h2><i class="fas fa-robot"></i> AI Recommendations</h2>
+                    <button class="close-btn">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    <div class="user-profile-summary">
+                        <h3>Your Profile Summary</h3>
+                        <p><strong>Name:</strong> ${result.user_profile.name}</p>
+                        <p><strong>Education:</strong> ${result.user_profile.education}</p>
+                        <p><strong>Skills:</strong> ${result.user_profile.skills}</p>
+                        <p><strong>Preferred Domain:</strong> ${result.user_profile.preferred_domain}</p>
+                        <p><strong>Preferred Location:</strong> ${result.user_profile.preferred_location}</p>
+                    </div>
+                    
+                    <div class="recommendations-list">
+                        <h3>Top 3 Internship Recommendations</h3>
+                        ${result.recommendations.map((rec, index) => `
+                        <div class="recommendation-card">
+                            <div class="card-header">
+                            <h4>${index + 1}. ${rec.company} - ${rec.role}</h4>
+                            <span class="similarity-score">Score: ${(rec.similarity_score * 100).toFixed(1)}%</span>
+                            </div>
+                            <div class="card-body">
+                            <p><strong>Domain:</strong> ${rec.domain}</p>
+                            <p><strong>Location:</strong> ${rec.location}</p>
+                            <p><strong>Type:</strong> ${rec.type}</p>
+                            <p><strong>Duration:</strong> ${rec.duration}</p>
+                            <p><strong>Stipend:</strong> ${rec.stipend}</p>
+                            <p><strong>Why Recommended:</strong> ${rec.reason}</p>
+                            </div>
+                        </div>
+                        `).join('')}
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button class="btn primary close-modal-btn">Close</button>
+                    </div>
+                </div>
+                </div>
+            `;
+            
+            // Add modal to page
+            document.body.insertAdjacentHTML('beforeend', recommendationsHTML);
+            
+            // Add event listeners for closing modal
+            document.querySelector('.close-btn').addEventListener('click', closeModal);
+            document.querySelector('.close-modal-btn').addEventListener('click', closeModal);
+            
+            // Close modal when clicking outside
+            document.querySelector('.recommendations-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                closeModal();
+                }
+            });
+            
+            // Show modal
+            document.querySelector('.recommendations-modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            const modal = document.querySelector('.recommendations-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        // Add CSS for recommendations modal
+        document.head.insertAdjacentHTML('beforeend', `
+            <style>
+                .recommendations-modal {
+                display: block;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                overflow: auto;
+                }
+                
+                .modal-content {
+                background-color: #fff;
+                margin: 2% auto;
+                padding: 0;
+                border-radius: 8px;
+                width: 90%;
+                max-width: 800px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                max-height: 90vh;
+                overflow-y: auto;
+                }
+                
+                .modal-header {
+                padding: 20px;
+                background-color: #1976d2;
+                color: white;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                }
+                
+                .modal-header h2 {
+                margin: 0;
+                font-size: 1.5rem;
+                }
+                
+                .close-btn {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 2rem;
+                cursor: pointer;
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                }
+                
+                .modal-body {
+                padding: 20px;
+                }
+                
+                .user-profile-summary {
+                background-color: #f5f5f5;
+                padding: 15px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                }
+                
+                .user-profile-summary h3 {
+                margin-top: 0;
+                color: #1976d2;
+                }
+                
+                .recommendations-list h3 {
+                color: #1976d2;
+                border-bottom: 2px solid #1976d2;
+                padding-bottom: 5px;
+                }
+                
+                .recommendation-card {
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-bottom: 15px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+                
+                .card-header {
+                background-color: #e3f2fd;
+                padding: 15px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                }
+                
+                .card-header h4 {
+                margin: 0;
+                color: #1976d2;
+                }
+                
+                .similarity-score {
+                background-color: #1976d2;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 15px;
+                font-size: 0.9rem;
+                }
+                
+                .card-body {
+                padding: 15px;
+                }
+                
+                .card-body p {
+                margin: 5px 0;
+                }
+                
+                .modal-footer {
+                padding: 20px;
+                text-align: right;
+                border-top: 1px solid #eee;
+                }
+                
+                .close-modal-btn {
+                background-color: #1976d2;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1rem;
+                }
+                
+                .close-modal-btn:hover {
+                background-color: #1565c0;
+                }
+            </style>
+        `);
+    </script>
+</body>
+</html>

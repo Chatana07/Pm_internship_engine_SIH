@@ -1,0 +1,502 @@
+[
+  {
+    "InternshipID":1,
+    "Company":"PhonePe",
+    "Role":"Finance Intern",
+    "Domain":"Finance",
+    "Location":"Bangalore",
+    "Type":"Part-time",
+    "Duration":"12 months",
+    "Stipend":"20000 INR"
+  },
+  {
+    "InternshipID":2,
+    "Company":"Infosys",
+    "Role":"NLP Intern",
+    "Domain":"AI",
+    "Location":"Bangalore",
+    "Type":"Full-time",
+    "Duration":"3 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":3,
+    "Company":"Swiggy",
+    "Role":"AI Research Intern",
+    "Domain":"AI",
+    "Location":"Kolkata",
+    "Type":"Full-time",
+    "Duration":"12 months",
+    "Stipend":"20000 INR"
+  },
+  {
+    "InternshipID":4,
+    "Company":"Wipro",
+    "Role":"Business Analyst Intern",
+    "Domain":"Business Analyst",
+    "Location":"Bangalore",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"Unpaid"
+  },
+  {
+    "InternshipID":5,
+    "Company":"TCS",
+    "Role":"ML Ops Intern",
+    "Domain":"Data Science",
+    "Location":"Delhi",
+    "Type":"Part-time",
+    "Duration":"6 months",
+    "Stipend":"Unpaid"
+  },
+  {
+    "InternshipID":6,
+    "Company":"Deloitte",
+    "Role":"UI\/UX Intern",
+    "Domain":"UI\/UX Designer",
+    "Location":"Bangalore",
+    "Type":"Full-time",
+    "Duration":"3 months",
+    "Stipend":"10000 INR"
+  },
+  {
+    "InternshipID":7,
+    "Company":"Cognizant",
+    "Role":"Product Designer Intern",
+    "Domain":"UI\/UX Designer",
+    "Location":"Delhi",
+    "Type":"Full-time",
+    "Duration":"12 months",
+    "Stipend":"10000 INR"
+  },
+  {
+    "InternshipID":8,
+    "Company":"Byjus",
+    "Role":"Risk Analyst Intern",
+    "Domain":"Finance",
+    "Location":"Bangalore",
+    "Type":"Full-time",
+    "Duration":"6 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":9,
+    "Company":"ZS Associates",
+    "Role":"Backend Developer Intern",
+    "Domain":"Web Development",
+    "Location":"Remote",
+    "Type":"Part-time",
+    "Duration":"6 months",
+    "Stipend":"15000 INR"
+  },
+  {
+    "InternshipID":10,
+    "Company":"KPMG",
+    "Role":"Business Analyst Intern",
+    "Domain":"Business Analyst",
+    "Location":"Bangalore",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"20000 INR"
+  },
+  {
+    "InternshipID":11,
+    "Company":"Paytm",
+    "Role":"Finance Intern",
+    "Domain":"Finance",
+    "Location":"Delhi",
+    "Type":"Full-time",
+    "Duration":"3 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":12,
+    "Company":"HCL",
+    "Role":"Business Analyst Intern",
+    "Domain":"Business Analyst",
+    "Location":"Kolkata",
+    "Type":"Part-time",
+    "Duration":"12 months",
+    "Stipend":"10000 INR"
+  },
+  {
+    "InternshipID":13,
+    "Company":"Swiggy",
+    "Role":"Data Science Intern",
+    "Domain":"Data Science",
+    "Location":"Delhi",
+    "Type":"Full-time",
+    "Duration":"6 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":14,
+    "Company":"Flipkart",
+    "Role":"AI Research Intern",
+    "Domain":"AI",
+    "Location":"Delhi",
+    "Type":"Part-time",
+    "Duration":"6 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":15,
+    "Company":"HCL",
+    "Role":"NLP Intern",
+    "Domain":"AI",
+    "Location":"Remote",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"10000 INR"
+  },
+  {
+    "InternshipID":16,
+    "Company":"PhonePe",
+    "Role":"Graphic Design Intern",
+    "Domain":"Graphics Designer",
+    "Location":"Remote",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"15000 INR"
+  },
+  {
+    "InternshipID":17,
+    "Company":"Swiggy",
+    "Role":"AI Research Intern",
+    "Domain":"AI",
+    "Location":"Bangalore",
+    "Type":"Part-time",
+    "Duration":"12 months",
+    "Stipend":"15000 INR"
+  },
+  {
+    "InternshipID":18,
+    "Company":"Flipkart",
+    "Role":"UI\/UX Intern",
+    "Domain":"UI\/UX Designer",
+    "Location":"Bangalore",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"20000 INR"
+  },
+  {
+    "InternshipID":19,
+    "Company":"Swiggy",
+    "Role":"AI Research Intern",
+    "Domain":"AI",
+    "Location":"Remote",
+    "Type":"Part-time",
+    "Duration":"12 months",
+    "Stipend":"15000 INR"
+  },
+  {
+    "InternshipID":20,
+    "Company":"Wipro",
+    "Role":"UI\/UX Intern",
+    "Domain":"UI\/UX Designer",
+    "Location":"Delhi",
+    "Type":"Part-time",
+    "Duration":"12 months",
+    "Stipend":"Unpaid"
+  },
+  {
+    "InternshipID":21,
+    "Company":"Paytm",
+    "Role":"Product Designer Intern",
+    "Domain":"UI\/UX Designer",
+    "Location":"Bangalore",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"10000 INR"
+  },
+  {
+    "InternshipID":22,
+    "Company":"Cognizant",
+    "Role":"Product Designer Intern",
+    "Domain":"UI\/UX Designer",
+    "Location":"Remote",
+    "Type":"Part-time",
+    "Duration":"6 months",
+    "Stipend":"15000 INR"
+  },
+  {
+    "InternshipID":23,
+    "Company":"Capgemini",
+    "Role":"NLP Intern",
+    "Domain":"AI",
+    "Location":"Bangalore",
+    "Type":"Part-time",
+    "Duration":"6 months",
+    "Stipend":"10000 INR"
+  },
+  {
+    "InternshipID":24,
+    "Company":"ZS Associates",
+    "Role":"Risk Analyst Intern",
+    "Domain":"Finance",
+    "Location":"Mumbai",
+    "Type":"Part-time",
+    "Duration":"12 months",
+    "Stipend":"Unpaid"
+  },
+  {
+    "InternshipID":25,
+    "Company":"Cognizant",
+    "Role":"ML Ops Intern",
+    "Domain":"Data Science",
+    "Location":"Remote",
+    "Type":"Full-time",
+    "Duration":"6 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":26,
+    "Company":"HCL",
+    "Role":"Finance Intern",
+    "Domain":"Finance",
+    "Location":"Remote",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":27,
+    "Company":"Flipkart",
+    "Role":"Computer Vision Intern",
+    "Domain":"AI",
+    "Location":"Mumbai",
+    "Type":"Full-time",
+    "Duration":"6 months",
+    "Stipend":"Unpaid"
+  },
+  {
+    "InternshipID":28,
+    "Company":"Paytm",
+    "Role":"Graphic Design Intern",
+    "Domain":"Graphics Designer",
+    "Location":"Mumbai",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":29,
+    "Company":"TCS",
+    "Role":"Full Stack Developer Intern",
+    "Domain":"Web Development",
+    "Location":"Delhi",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"20000 INR"
+  },
+  {
+    "InternshipID":30,
+    "Company":"KPMG",
+    "Role":"Visual Designer Intern",
+    "Domain":"Graphics Designer",
+    "Location":"Kolkata",
+    "Type":"Part-time",
+    "Duration":"6 months",
+    "Stipend":"Unpaid"
+  },
+  {
+    "InternshipID":31,
+    "Company":"EY",
+    "Role":"ML Ops Intern",
+    "Domain":"Data Science",
+    "Location":"Delhi",
+    "Type":"Full-time",
+    "Duration":"6 months",
+    "Stipend":"15000 INR"
+  },
+  {
+    "InternshipID":32,
+    "Company":"Byjus",
+    "Role":"Creative Design Intern",
+    "Domain":"Graphics Designer",
+    "Location":"Bangalore",
+    "Type":"Full-time",
+    "Duration":"12 months",
+    "Stipend":"20000 INR"
+  },
+  {
+    "InternshipID":33,
+    "Company":"KPMG",
+    "Role":"Business Analyst Intern",
+    "Domain":"Business Analyst",
+    "Location":"Mumbai",
+    "Type":"Part-time",
+    "Duration":"6 months",
+    "Stipend":"10000 INR"
+  },
+  {
+    "InternshipID":34,
+    "Company":"Capgemini",
+    "Role":"Visual Designer Intern",
+    "Domain":"Graphics Designer",
+    "Location":"Kolkata",
+    "Type":"Part-time",
+    "Duration":"12 months",
+    "Stipend":"Unpaid"
+  },
+  {
+    "InternshipID":35,
+    "Company":"Zomato",
+    "Role":"Data Science Intern",
+    "Domain":"Data Science",
+    "Location":"Kolkata",
+    "Type":"Full-time",
+    "Duration":"6 months",
+    "Stipend":"Unpaid"
+  },
+  {
+    "InternshipID":36,
+    "Company":"Tech Mahindra",
+    "Role":"Finance Intern",
+    "Domain":"Finance",
+    "Location":"Kolkata",
+    "Type":"Part-time",
+    "Duration":"6 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":37,
+    "Company":"Cognizant",
+    "Role":"Frontend Developer Intern",
+    "Domain":"Web Development",
+    "Location":"Mumbai",
+    "Type":"Full-time",
+    "Duration":"6 months",
+    "Stipend":"10000 INR"
+  },
+  {
+    "InternshipID":38,
+    "Company":"Byjus",
+    "Role":"UI\/UX Intern",
+    "Domain":"UI\/UX Designer",
+    "Location":"Delhi",
+    "Type":"Part-time",
+    "Duration":"12 months",
+    "Stipend":"Unpaid"
+  },
+  {
+    "InternshipID":39,
+    "Company":"Google India",
+    "Role":"Creative Design Intern",
+    "Domain":"Graphics Designer",
+    "Location":"Delhi",
+    "Type":"Full-time",
+    "Duration":"12 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":40,
+    "Company":"Paytm",
+    "Role":"Backend Developer Intern",
+    "Domain":"Web Development",
+    "Location":"Delhi",
+    "Type":"Part-time",
+    "Duration":"6 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":41,
+    "Company":"PhonePe",
+    "Role":"Backend Developer Intern",
+    "Domain":"Web Development",
+    "Location":"Remote",
+    "Type":"Full-time",
+    "Duration":"12 months",
+    "Stipend":"20000 INR"
+  },
+  {
+    "InternshipID":42,
+    "Company":"Wipro",
+    "Role":"Strategy Intern",
+    "Domain":"Business Analyst",
+    "Location":"Mumbai",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"20000 INR"
+  },
+  {
+    "InternshipID":43,
+    "Company":"HCL",
+    "Role":"ML Ops Intern",
+    "Domain":"Data Science",
+    "Location":"Mumbai",
+    "Type":"Part-time",
+    "Duration":"6 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":44,
+    "Company":"PhonePe",
+    "Role":"Computer Vision Intern",
+    "Domain":"AI",
+    "Location":"Remote",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":45,
+    "Company":"HCL",
+    "Role":"UI\/UX Intern",
+    "Domain":"UI\/UX Designer",
+    "Location":"Delhi",
+    "Type":"Full-time",
+    "Duration":"6 months",
+    "Stipend":"20000 INR"
+  },
+  {
+    "InternshipID":46,
+    "Company":"Swiggy",
+    "Role":"Full Stack Developer Intern",
+    "Domain":"Web Development",
+    "Location":"Mumbai",
+    "Type":"Part-time",
+    "Duration":"12 months",
+    "Stipend":"5000 INR"
+  },
+  {
+    "InternshipID":47,
+    "Company":"ZS Associates",
+    "Role":"Interaction Designer Intern",
+    "Domain":"UI\/UX Designer",
+    "Location":"Kolkata",
+    "Type":"Full-time",
+    "Duration":"3 months",
+    "Stipend":"10000 INR"
+  },
+  {
+    "InternshipID":48,
+    "Company":"Byjus",
+    "Role":"Operations Intern",
+    "Domain":"Business Analyst",
+    "Location":"Kolkata",
+    "Type":"Part-time",
+    "Duration":"6 months",
+    "Stipend":"20000 INR"
+  },
+  {
+    "InternshipID":49,
+    "Company":"Infosys",
+    "Role":"Full Stack Developer Intern",
+    "Domain":"Web Development",
+    "Location":"Bangalore",
+    "Type":"Part-time",
+    "Duration":"3 months",
+    "Stipend":"20000 INR"
+  },
+  {
+    "InternshipID":50,
+    "Company":"KPMG",
+    "Role":"Operations Intern",
+    "Domain":"Business Analyst",
+    "Location":"Bangalore",
+    "Type":"Full-time",
+    "Duration":"3 months",
+    "Stipend":"5000 INR"
+  }
+]

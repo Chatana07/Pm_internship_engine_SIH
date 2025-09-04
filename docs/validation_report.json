@@ -1,0 +1,91 @@
+{
+  "validation_timestamp": "2025-09-02T01:50:58.329197",
+  "dataset_stats": {
+    "total_users": 100,
+    "total_internships": 50
+  },
+  "matching_stats": {
+    "users_with_recommendations": 19,
+    "users_without_recommendations": 81,
+    "total_recommendations_generated": 19,
+    "average_recommendations_per_user": 0.19
+  },
+  "domain_coverage": {
+    "user_domains": {
+      "Business Analyst": 14,
+      "Data Science": 15,
+      "UI/UX Designer": 10,
+      "Graphics Designer": 21,
+      "AI": 17,
+      "Web Development": 13,
+      "Finance": 10
+    },
+    "internship_domains": {
+      "Finance": 6,
+      "AI": 9,
+      "Business Analyst": 7,
+      "Data Science": 6,
+      "UI/UX Designer": 9,
+      "Web Development": 7,
+      "Graphics Designer": 6
+    }
+  },
+  "location_coverage": {},
+  "sample_recommendations": [
+    {
+      "user_id": 15,
+      "user_domain": "AI",
+      "user_enrollment": "Full-time",
+      "recommendations_count": 1,
+      "top_recommendation": {
+        "company": "Swiggy",
+        "role": "AI Research Intern",
+        "stipend": "15000 INR"
+      }
+    },
+    {
+      "user_id": 20,
+      "user_domain": "AI",
+      "user_enrollment": "Full-time",
+      "recommendations_count": 1,
+      "top_recommendation": {
+        "company": "Swiggy",
+        "role": "AI Research Intern",
+        "stipend": "15000 INR"
+      }
+    },
+    {
+      "user_id": 25,
+      "user_domain": "Web Development",
+      "user_enrollment": "Remote/Online",
+      "recommendations_count": 1,
+      "top_recommendation": {
+        "company": "PhonePe",
+        "role": "Backend Developer Intern",
+        "stipend": "20000 INR"
+      }
+    },
+    {
+      "user_id": 28,
+      "user_domain": "Graphics Designer",
+      "user_enrollment": "Part-time",
+      "recommendations_count": 1,
+      "top_recommendation": {
+        "company": "Byjus",
+        "role": "Creative Design Intern",
+        "stipend": "20000 INR"
+      }
+    },
+    {
+      "user_id": 33,
+      "user_domain": "Web Development",
+      "user_enrollment": "Remote/Online",
+      "recommendations_count": 1,
+      "top_recommendation": {
+        "company": "PhonePe",
+        "role": "Backend Developer Intern",
+        "stipend": "20000 INR"
+      }
+    }
+  ]
+}

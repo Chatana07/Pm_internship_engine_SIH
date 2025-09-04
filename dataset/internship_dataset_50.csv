@@ -1,0 +1,51 @@
+InternshipID,Company,Role,Domain,Location,Type,Duration,Stipend
+1,PhonePe,Finance Intern,Finance,Bangalore,Part-time,12 months,20000 INR
+2,Infosys,NLP Intern,AI,Bangalore,Full-time,3 months,5000 INR
+3,Swiggy,AI Research Intern,AI,Kolkata,Full-time,12 months,20000 INR
+4,Wipro,Business Analyst Intern,Business Analyst,Bangalore,Part-time,3 months,Unpaid
+5,TCS,ML Ops Intern,Data Science,Delhi,Part-time,6 months,Unpaid
+6,Deloitte,UI/UX Intern,UI/UX Designer,Bangalore,Full-time,3 months,10000 INR
+7,Cognizant,Product Designer Intern,UI/UX Designer,Delhi,Full-time,12 months,10000 INR
+8,Byjus,Risk Analyst Intern,Finance,Bangalore,Full-time,6 months,5000 INR
+9,ZS Associates,Backend Developer Intern,Web Development,Remote,Part-time,6 months,15000 INR
+10,KPMG,Business Analyst Intern,Business Analyst,Bangalore,Part-time,3 months,20000 INR
+11,Paytm,Finance Intern,Finance,Delhi,Full-time,3 months,5000 INR
+12,HCL,Business Analyst Intern,Business Analyst,Kolkata,Part-time,12 months,10000 INR
+13,Swiggy,Data Science Intern,Data Science,Delhi,Full-time,6 months,5000 INR
+14,Flipkart,AI Research Intern,AI,Delhi,Part-time,6 months,5000 INR
+15,HCL,NLP Intern,AI,Remote,Part-time,3 months,10000 INR
+16,PhonePe,Graphic Design Intern,Graphics Designer,Remote,Part-time,3 months,15000 INR
+17,Swiggy,AI Research Intern,AI,Bangalore,Part-time,12 months,15000 INR
+18,Flipkart,UI/UX Intern,UI/UX Designer,Bangalore,Part-time,3 months,20000 INR
+19,Swiggy,AI Research Intern,AI,Remote,Part-time,12 months,15000 INR
+20,Wipro,UI/UX Intern,UI/UX Designer,Delhi,Part-time,12 months,Unpaid
+21,Paytm,Product Designer Intern,UI/UX Designer,Bangalore,Part-time,3 months,10000 INR
+22,Cognizant,Product Designer Intern,UI/UX Designer,Remote,Part-time,6 months,15000 INR
+23,Capgemini,NLP Intern,AI,Bangalore,Part-time,6 months,10000 INR
+24,ZS Associates,Risk Analyst Intern,Finance,Mumbai,Part-time,12 months,Unpaid
+25,Cognizant,ML Ops Intern,Data Science,Remote,Full-time,6 months,5000 INR
+26,HCL,Finance Intern,Finance,Remote,Part-time,3 months,5000 INR
+27,Flipkart,Computer Vision Intern,AI,Mumbai,Full-time,6 months,Unpaid
+28,Paytm,Graphic Design Intern,Graphics Designer,Mumbai,Part-time,3 months,5000 INR
+29,TCS,Full Stack Developer Intern,Web Development,Delhi,Part-time,3 months,20000 INR
+30,KPMG,Visual Designer Intern,Graphics Designer,Kolkata,Part-time,6 months,Unpaid
+31,EY,ML Ops Intern,Data Science,Delhi,Full-time,6 months,15000 INR
+32,Byjus,Creative Design Intern,Graphics Designer,Bangalore,Full-time,12 months,20000 INR
+33,KPMG,Business Analyst Intern,Business Analyst,Mumbai,Part-time,6 months,10000 INR
+34,Capgemini,Visual Designer Intern,Graphics Designer,Kolkata,Part-time,12 months,Unpaid
+35,Zomato,Data Science Intern,Data Science,Kolkata,Full-time,6 months,Unpaid
+36,Tech Mahindra,Finance Intern,Finance,Kolkata,Part-time,6 months,5000 INR
+37,Cognizant,Frontend Developer Intern,Web Development,Mumbai,Full-time,6 months,10000 INR
+38,Byjus,UI/UX Intern,UI/UX Designer,Delhi,Part-time,12 months,Unpaid
+39,Google India,Creative Design Intern,Graphics Designer,Delhi,Full-time,12 months,5000 INR
+40,Paytm,Backend Developer Intern,Web Development,Delhi,Part-time,6 months,5000 INR
+41,PhonePe,Backend Developer Intern,Web Development,Remote,Full-time,12 months,20000 INR
+42,Wipro,Strategy Intern,Business Analyst,Mumbai,Part-time,3 months,20000 INR
+43,HCL,ML Ops Intern,Data Science,Mumbai,Part-time,6 months,5000 INR
+44,PhonePe,Computer Vision Intern,AI,Remote,Part-time,3 months,5000 INR
+45,HCL,UI/UX Intern,UI/UX Designer,Delhi,Full-time,6 months,20000 INR
+46,Swiggy,Full Stack Developer Intern,Web Development,Mumbai,Part-time,12 months,5000 INR
+47,ZS Associates,Interaction Designer Intern,UI/UX Designer,Kolkata,Full-time,3 months,10000 INR
+48,Byjus,Operations Intern,Business Analyst,Kolkata,Part-time,6 months,20000 INR
+49,Infosys,Full Stack Developer Intern,Web Development,Bangalore,Part-time,3 months,20000 INR
+50,KPMG,Operations Intern,Business Analyst,Bangalore,Full-time,3 months,5000 INR

@@ -1,0 +1,260 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Top Bar */
+.head_container {
+  background: black;
+  color: white;
+  padding: 5px 20px;
+  height: 25px;
+  display: flex;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+ justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+}
+.nav_button{
+  display: flex;
+  gap: 5px;
+}
+.nav_button button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.pm_image{
+  position: fixed;
+}
+/* Hero Section */
+.hero {
+  display: flex;
+  background: linear-gradient(to right, #004aad, #1976d2);
+  color: white;
+  justify-content: center;
+  align-items: center;      
+  text-align: center;
+  padding: 40px;
+  position: relative;
+}
+
+.hero-content {
+  flex: 1;                   
+}
+
+.pm_image {
+  position: absolute;
+  right: 50px;       
+  top: 2px;                  
+}
+
+.hero input {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+}
+
+.hero button {
+  padding: 10px 20px;
+  background: #ff9800;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Quick Links */
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.quick-links .card {
+  background: #e3f2fd;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+/* Aadhaar Linking Section */
+.aadhaar-section {
+  background-color: #f8fafc;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 4px solid #2563eb;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.aadhaar-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.aadhaar-subtitle {
+  font-size: 16px;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.aadhaar-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.option-group {
+  background: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 12px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.option-group:hover {
+  background-color: #eff6ff;
+}
+
+.option-group input {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* Message Styling */
+.aadhaar-message {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2563eb;
+  display: none;
+}
+
+
+/* Government Job Section */
+.govt-job-section {
+  background-color: #f8fafc;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 4px solid #2563eb;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.govt-job-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.govt-job-subtitle {
+  font-size: 16px;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.govt-job-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Options */
+.option-group {
+  background: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 12px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.option-group:hover {
+  background-color: #eff6ff;
+}
+
+.option-group input {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* Details Box */
+.details-box {
+  margin: 15px 0;
+  padding: 15px;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.details-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+.details-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #94a3b8;
+  font-size: 14px;
+}
+
+/* Confirmation & Warning Messages */
+.govt-job-message {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  display: none;
+}
+
+.govt-job-message.success {
+  color: #16a34a; /* Green */
+}
+
+.govt-job-message.error {
+  color: #dc2626; /* Red */
+}

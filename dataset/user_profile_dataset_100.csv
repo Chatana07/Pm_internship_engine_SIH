@@ -1,0 +1,101 @@
+UserID,Education,Skills,PreferredDomain,PreferredLocation,InternshipDuration,EnrollmentStatus
+1,M.Tech AI,"SQL, Tableau, R, Business Strategy",Business Analyst,Delhi,12 months,Remote/Online
+2,M.Sc Statistics,"SQL, Tableau, R, Business Strategy",Business Analyst,Delhi,12 months,Part-time
+3,M.Tech AI,"Python, Pandas, SQL, Machine Learning",Data Science,Remote,12 months,Part-time
+4,B.Des UI/UX,"Python, Spark, Big Data",Data Science,Kolkata,12 months,Remote/Online
+5,BBA Business Analytics,"Python, Pandas, SQL, Machine Learning",Data Science,Delhi,12 months,Remote/Online
+6,B.Tech Computer Science,"User Research, Interaction Design",UI/UX Designer,Mumbai,12 months,Remote/Online
+7,M.Sc Statistics,"CorelDRAW, Canva, Branding",Graphics Designer,Mumbai,12 months,Part-time
+8,MBA Finance,"Machine Learning, NLP, Python, TensorFlow",AI,Remote,12 months,Part-time
+9,B.Com Finance,"Photoshop, Illustrator, Figma",Graphics Designer,Remote,12 months,Remote/Online
+10,BBA Business Analytics,"InDesign, Typography, Layouts",Graphics Designer,Kolkata,12 months,Remote/Online
+11,B.Tech Computer Science,"PHP, Laravel, MySQL",Web Development,Delhi,12 months,Full-time
+12,M.Sc Statistics,"Banking, Risk Analysis, SQL",Finance,Delhi,12 months,Part-time
+13,M.Sc Statistics,"Python, Pandas, SQL, Machine Learning",Data Science,Mumbai,12 months,Part-time
+14,B.Des Graphics,"CorelDRAW, Canva, Branding",Graphics Designer,Bangalore,12 months,Full-time
+15,B.Tech Computer Science,"Computer Vision, CNN, Python",AI,Kolkata,12 months,Full-time
+16,B.Des Graphics,"Computer Vision, CNN, Python",AI,Bangalore,12 months,Part-time
+17,B.Com Finance,"Financial Modeling, Accounting, Excel",Finance,Kolkata,12 months,Part-time
+18,M.Tech AI,"Requirement Gathering, Data Analysis",Business Analyst,Bangalore,12 months,Full-time
+19,B.Tech Computer Science,"User Research, Interaction Design",UI/UX Designer,Kolkata,12 months,Part-time
+20,B.Des Graphics,"Machine Learning, NLP, Python, TensorFlow",AI,Remote,12 months,Full-time
+21,BBA Business Analytics,"Photoshop, Illustrator, Figma",Graphics Designer,Delhi,12 months,Full-time
+22,B.Com Finance,"CorelDRAW, Canva, Branding",Graphics Designer,Remote,12 months,Remote/Online
+23,B.Sc Data Science,"Python, Django, HTML, CSS, JavaScript",Web Development,Bangalore,12 months,Full-time
+24,B.Sc Computer Science,"Figma, Adobe XD, Wireframing, Prototyping",UI/UX Designer,Bangalore,12 months,Full-time
+25,B.Sc Data Science,"PHP, Laravel, MySQL",Web Development,Remote,12 months,Remote/Online
+26,MBA Finance,"InDesign, Typography, Layouts",Graphics Designer,Remote,12 months,Full-time
+27,BBA Business Analytics,"Machine Learning, NLP, Python, TensorFlow",AI,Delhi,12 months,Part-time
+28,B.Des UI/UX,"Photoshop, Illustrator, Figma",Graphics Designer,Bangalore,12 months,Part-time
+29,M.Tech AI,"Requirement Gathering, Data Analysis",Business Analyst,Delhi,12 months,Remote/Online
+30,MBA Finance,"Machine Learning, NLP, Python, TensorFlow",AI,Mumbai,12 months,Remote/Online
+31,BBA Business Analytics,"Photoshop, Illustrator, Figma",Graphics Designer,Mumbai,12 months,Full-time
+32,M.Tech AI,"SQL, Tableau, R, Business Strategy",Business Analyst,Mumbai,12 months,Remote/Online
+33,B.Des Graphics,"React, Node.js, MongoDB",Web Development,Kolkata,12 months,Remote/Online
+34,BBA Business Analytics,"TensorFlow, PyTorch, Python, Deep Learning",AI,Bangalore,12 months,Remote/Online
+35,B.Sc Data Science,"Python, Django, HTML, CSS, JavaScript",Web Development,Bangalore,12 months,Part-time
+36,BBA Business Analytics,"R, Statistics, Data Visualization",Data Science,Bangalore,12 months,Remote/Online
+37,B.Com Finance,"Financial Modeling, Accounting, Excel",Finance,Bangalore,12 months,Part-time
+38,BBA Business Analytics,"Python, Spark, Big Data",Data Science,Kolkata,12 months,Part-time
+39,B.Des Graphics,"R, Statistics, Data Visualization",Data Science,Mumbai,12 months,Full-time
+40,MBA Finance,"Excel, PowerBI, Communication",Business Analyst,Remote,12 months,Full-time
+41,B.Sc Data Science,"Machine Learning, NLP, Python, TensorFlow",AI,Remote,12 months,Full-time
+42,M.Tech AI,"Financial Modeling, Accounting, Excel",Finance,Kolkata,12 months,Part-time
+43,B.Tech Computer Science,"Machine Learning, NLP, Python, TensorFlow",AI,Delhi,12 months,Remote/Online
+44,BBA Business Analytics,"Banking, Risk Analysis, SQL",Finance,Remote,12 months,Part-time
+45,B.Tech Computer Science,"Python, Django, HTML, CSS, JavaScript",Web Development,Kolkata,12 months,Remote/Online
+46,B.Sc Data Science,"InDesign, Typography, Layouts",Graphics Designer,Bangalore,12 months,Full-time
+47,MBA Finance,"R, Statistics, Data Visualization",Data Science,Mumbai,12 months,Part-time
+48,B.Tech Computer Science,"TensorFlow, PyTorch, Python, Deep Learning",AI,Bangalore,12 months,Remote/Online
+49,B.Des UI/UX,"CorelDRAW, Canva, Branding",Graphics Designer,Kolkata,12 months,Part-time
+50,M.Tech AI,"CorelDRAW, Canva, Branding",Graphics Designer,Kolkata,12 months,Remote/Online
+51,M.Sc Statistics,"Figma, Adobe XD, Wireframing, Prototyping",UI/UX Designer,Bangalore,12 months,Full-time
+52,B.Des UI/UX,"Sketch, UI Kits, Design Systems",UI/UX Designer,Kolkata,12 months,Full-time
+53,B.Sc Data Science,"Requirement Gathering, Data Analysis",Business Analyst,Mumbai,12 months,Part-time
+54,BBA Business Analytics,"Python, Spark, Big Data",Data Science,Kolkata,12 months,Remote/Online
+55,M.Sc Statistics,"CorelDRAW, Canva, Branding",Graphics Designer,Delhi,12 months,Full-time
+56,MBA Finance,"Python, Django, HTML, CSS, JavaScript",Web Development,Bangalore,12 months,Remote/Online
+57,MBA Finance,"R, Statistics, Data Visualization",Data Science,Kolkata,12 months,Full-time
+58,B.Sc Data Science,"CorelDRAW, Canva, Branding",Graphics Designer,Kolkata,12 months,Remote/Online
+59,B.Des UI/UX,"PHP, Laravel, MySQL",Web Development,Remote,12 months,Part-time
+60,B.Sc Computer Science,"Requirement Gathering, Data Analysis",Business Analyst,Mumbai,12 months,Full-time
+61,B.Des Graphics,"Python, Django, HTML, CSS, JavaScript",Web Development,Kolkata,12 months,Full-time
+62,BBA Business Analytics,"Python, Pandas, SQL, Machine Learning",Data Science,Remote,12 months,Full-time
+63,B.Com Finance,"Computer Vision, CNN, Python",AI,Kolkata,12 months,Remote/Online
+64,MBA Finance,"SQL, Tableau, R, Business Strategy",Business Analyst,Mumbai,12 months,Part-time
+65,B.Des UI/UX,"SQL, Tableau, R, Business Strategy",Business Analyst,Mumbai,12 months,Remote/Online
+66,B.Sc Computer Science,"Finance, Excel, PowerBI",Finance,Delhi,12 months,Full-time
+67,B.Des UI/UX,"Computer Vision, CNN, Python",AI,Delhi,12 months,Remote/Online
+68,BBA Business Analytics,"Financial Modeling, Accounting, Excel",Finance,Mumbai,12 months,Full-time
+69,MBA Finance,"Python, Django, HTML, CSS, JavaScript",Web Development,Bangalore,12 months,Remote/Online
+70,B.Des UI/UX,"User Research, Interaction Design",UI/UX Designer,Kolkata,12 months,Remote/Online
+71,B.Com Finance,"Machine Learning, NLP, Python, TensorFlow",AI,Delhi,12 months,Part-time
+72,M.Tech AI,"Photoshop, Illustrator, Figma",Graphics Designer,Mumbai,12 months,Part-time
+73,B.Tech Computer Science,"Finance, Excel, PowerBI",Finance,Remote,12 months,Remote/Online
+74,M.Tech AI,"Financial Modeling, Accounting, Excel",Finance,Remote,12 months,Full-time
+75,MBA Finance,"Python, Pandas, SQL, Machine Learning",Data Science,Delhi,12 months,Remote/Online
+76,B.Des Graphics,"InDesign, Typography, Layouts",Graphics Designer,Remote,12 months,Part-time
+77,M.Sc Statistics,"Sketch, UI Kits, Design Systems",UI/UX Designer,Bangalore,12 months,Part-time
+78,B.Des UI/UX,"Finance, Excel, PowerBI",Finance,Kolkata,12 months,Part-time
+79,M.Tech AI,"Photoshop, Illustrator, Figma",Graphics Designer,Bangalore,12 months,Full-time
+80,B.Sc Data Science,"Excel, PowerBI, Communication",Business Analyst,Delhi,12 months,Full-time
+81,MBA Finance,"Photoshop, Illustrator, Figma",Graphics Designer,Bangalore,12 months,Remote/Online
+82,B.Tech Computer Science,"Sketch, UI Kits, Design Systems",UI/UX Designer,Delhi,12 months,Part-time
+83,M.Sc Statistics,"TensorFlow, PyTorch, Python, Deep Learning",AI,Bangalore,12 months,Remote/Online
+84,B.Tech Computer Science,"User Research, Interaction Design",UI/UX Designer,Remote,12 months,Remote/Online
+85,B.Sc Data Science,"Python, Pandas, SQL, Machine Learning",Data Science,Bangalore,12 months,Part-time
+86,M.Sc Statistics,"Python, Spark, Big Data",Data Science,Bangalore,12 months,Full-time
+87,M.Sc Statistics,"Sketch, UI Kits, Design Systems",UI/UX Designer,Mumbai,12 months,Full-time
+88,B.Des Graphics,"InDesign, Typography, Layouts",Graphics Designer,Delhi,12 months,Full-time
+89,B.Com Finance,"Photoshop, Illustrator, Figma",Graphics Designer,Remote,12 months,Full-time
+90,B.Tech Computer Science,"Computer Vision, CNN, Python",AI,Mumbai,12 months,Remote/Online
+91,M.Sc Statistics,"SQL, Tableau, R, Business Strategy",Business Analyst,Remote,12 months,Part-time
+92,M.Sc Statistics,"Requirement Gathering, Data Analysis",Business Analyst,Delhi,12 months,Remote/Online
+93,MBA Finance,"Requirement Gathering, Data Analysis",Business Analyst,Bangalore,12 months,Full-time
+94,B.Sc Data Science,"Machine Learning, NLP, Python, TensorFlow",AI,Mumbai,12 months,Part-time
+95,B.Tech Computer Science,"Photoshop, Illustrator, Figma",Graphics Designer,Bangalore,12 months,Part-time
+96,B.Tech Computer Science,"Machine Learning, NLP, Python, TensorFlow",AI,Delhi,12 months,Remote/Online
+97,M.Sc Statistics,"React, Node.js, MongoDB",Web Development,Remote,12 months,Part-time
+98,B.Des Graphics,"Python, Django, HTML, CSS, JavaScript",Web Development,Mumbai,12 months,Part-time
+99,B.Sc Computer Science,"Python, Django, HTML, CSS, JavaScript",Web Development,Kolkata,12 months,Part-time
+100,B.Des UI/UX,"Python, Spark, Big Data",Data Science,Bangalore,12 months,Full-time

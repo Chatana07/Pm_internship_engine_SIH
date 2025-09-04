@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Based PM Internship Scheme</title>
+  <link rel="icon" href="assets/LOGO.jpeg" alt="mca_logo">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+  <!--header part-->
+  <header>
+    <div class="head_container" style="background: black;">
+      <div class="header">
+        <img src="assets/Flag_of_India.jpeg" alt="Flag_of_India" style="height: 20px; width: 30px;">
+        <p style="font-size: 14px; color: white;">भारत सरकार / Government Of India</p>
+      </div>
+    </div>
+    <!--Navigation-->
+    <nav class="nav">
+      <div class="logo">
+        <img src="assets/LOGO.jpeg" alt="PM Internship Scheme" style="height: 45px; width: 102px;">
+        <img src="assets/pm_intern.jpeg" alt="PM Internship" style="height: 49px; width: 110px;">
+      </div>
+      <div class="nav_button" id="auth-buttons">
+        <a href="#"><button id="registerBtn">Youth Registration</button></a>
+        <a href="#"><button id="loginBtn">Login</button></a>
+        <a href="profile.html"><img id="profilePic" class="profile-pic" src="" alt="Profile" style="display:none;" /></a>
+        <img src="assets/Bikashit Varat.jpeg" alt="Bikashit Varat" style="height: 49px; width: 110px;">
+      </div>
+    </nav>
+  </header>
+  <main>
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Find the Best Internship for You</h1>
+        <input type="text" placeholder="Search by skill or location">
+        <button>Search</button>
+      </div>
+      <div class="pm_image">
+        <img src="assets/pm.jpeg" alt="pm_image" style="height: 205px; width: 200px;">
+      </div>
+    </section>
+
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+      <div class="card">About the Scheme</div>
+      <a href="inship.html"><div class="card">Internships</div></a>
+      <div class="card"><a id="airec" href="ai.html">AI Recommendations</a></div>
+    </section>
+
+
+    <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2 id="modalTitle">Register</h2>
+      <form id="authForm">
+        <input type="text" id="name" placeholder="Enter your name" required />
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <input type="file" id="pic" placeholder="Profile picture file" required />
+        <button type="submit">Submit</button>
+        <button type="button" class="close-btn" id="closeModal">Cancel</button>
+      </form>
+    </div>
+  </div>
+  </main>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

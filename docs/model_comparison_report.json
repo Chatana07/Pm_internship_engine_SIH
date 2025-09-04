@@ -1,0 +1,19 @@
+{
+  "rule_based": {
+    "accuracy": 0.19,
+    "users_with_recommendations": 19,
+    "total_recommendations": 19,
+    "avg_recommendations": 0.19
+  },
+  "ml_based": {
+    "accuracy": 1.0,
+    "users_with_recommendations": 100,
+    "total_recommendations": 300,
+    "avg_recommendations": 3.0
+  },
+  "comparison": {
+    "accuracy_improvement": 0.81,
+    "users_improvement": 81,
+    "avg_recommendations_improvement": 2.81
+  }
+}

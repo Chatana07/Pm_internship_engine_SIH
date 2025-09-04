@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Based Recommendations Engine</title>
+  <link rel="stylesheet" href="css/ai.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="header">
+    <h1><i class="fas fa-robot"></i> AI-Based Recommendations Engine</h1>
+    <h2 style="color: #fff; margin-top: 0; font-weight: 500;">For PM Internship Program</h2>
+    <p style="opacity: .8; font-size: 1.1rem;">Fill the criteria below and proceed to get personalized internship matches tailored to your profile.</p>
+  </div>
+
+  <form class="card" id="recommendationForm">
+    <h2 id="formTitle"><i class="fas fa-clipboard-check"></i> Eligibility & Preferences</h2>
+
+    <!-- Eligibility Section -->
+    <div class="section">
+      <div class="subhead"><i class="fas fa-exclamation-circle"></i> <span style="color: red;">* </span>marked sections are mandatory</div>
+      <div class="grid eligibility-grid">
+
+        <div class="field">
+          <label for="name">Name<span style="color: red;" name="name">*</span></label>
+          <input type="text" id="name" class="control" required placeholder="Enter your full name">
+        </div>
+
+        <div class="field">
+          <label for="citizenship">Citizenship<span style="color: red;">*</span></label>
+          <select id="citizenship" class="control" required>
+            <option value="Indian" selected>Indian</option>
+          </select>
+          <div class="hint">Must be an Indian citizen.</div>
+        </div>
+
+        <div class="field">
+          <label for="age">Age<span style="color: red;">*</span></label>
+          <input id="age" type="number" min="21" max="24" class="control" required />
+          <div class="hint">Between 21–24 years.</div>
+        </div>
+
+        <div class="field">
+          <label for="eduMin">Education</label>
+          <select id="eduMin" class="control" required>
+            <option value="" disabled selected>-- Select an option --</option>
+            <option>Class 10</option>
+            <option>ITI</option>
+            <option>Diploma</option>
+            <option>BCA</option>
+            <option>BA</option>
+            <option>BBA</option>
+            <option>B.Sc</option>
+            <option>B.Com</option>
+            <option>B.Pharma</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="subhead"><i class="fas fa-sliders-h"></i> Preferences</div>
+      <div class="grid eligibility-grid">
+        <div class="field">
+          <label for="skills">Skills<span style="color: red;">*</span></label>
+          <input type="text" id="skills" placeholder="e.g. HTML, CSS, Python" class="control" required />
+        </div>
+
+        <div class="field">
+          <label for="domain">Preferred Domain<span style="color: red;">*</span></label>
+          <select id="domain" class="control" required>
+            <option value="" disabled selected>-- Select an option --</option>
+            <option>Web Development</option>
+            <option>Data Science</option>
+            <option>Artificial Intelligence</option>
+            <option>Finance</option>
+            <option>Business Analyst</option>
+            <option>UI/UX Designer</option>
+            <option>Graphic Designer</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="location">Preferred Location<span style="color: red;">*</span></label>
+          <select id="location" class="control" required>
+            <option value="" disabled selected>-- Select an option --</option>
+            <option>Remote</option>
+            <option>Kolkata</option>
+            <option>Delhi</option>
+            <option>Bangalore</option>
+            <option>Mumbai</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="duration">Internship Duration</label>
+          <select id="duration" class="control">
+            <option value="" disabled selected>-- Select an option --</option>
+            <option>12 Months</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enrollment Status -->
+    <div class="section edu">
+      <div class="subhead"><i class="fas fa-graduation-cap"></i> Enrollment Status</div>
+      <div class="field">
+        <label class="label">Current Status<span style="color: red;">*</span></label>
+        <div class="radio-group" role="radiogroup">
+        <label class="radio">
+          <input type="radio" value="Not in full-time" checked required name="edu"/>
+          <span>Not in full-time job/study</span>
+        </label>
+        <label class="radio">
+          <input type="radio" value="Enrolled full-time" name="edu"/>
+          <span>Enrolled in full-time study/job (ineligible)</span>
+        </label>
+        <label class="radio">
+          <input type="radio" value="Distance/Online OK" name="edu"/>
+          <span>Distance / Online program</span>
+        </label>
+      </div>
+        <div class="hint">Distance/online programs are allowed.</div>
+      </div>
+      <p id="eduErrMessage" class="message"></p>
+    </div>
+
+    <!-- Family Income -->
+    <div class="section">
+      <div class="subhead"><i class="fas fa-money-bill-wave"></i> Financial Information</div>
+      <div class="grid">
+        <div class="field">
+          <label for="income" class="label">Family Income (Max)<span style="color: red;">*</span></label>
+          <select id="income" class="control" required>
+            <option>&lt; ₹1,00,000</option>
+            <option>₹1,00,000 – ₹3,00,000</option>
+            <option>₹3,00,000 – ₹5,00,000</option>
+            <option selected>Up to ₹8,00,000</option>
+          </select>
+          <div class="hint">Must not exceed ₹8 lakh per annum.</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section aadhaar-section">
+      <div class="subhead"><i class="fas fa-id-card"></i> Bank Account & Aadhaar Linking</div>
+      <p class="section-description">
+        Please confirm if your bank account is linked with your Aadhaar for seamless stipend disbursement.
+      </p>
+
+      <div class="radio-group">
+        <label class="radio">
+          <input type="radio" name="aadhaarLink" value="yes" required>
+          <span>Yes, my bank account is linked with Aadhaar</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="aadhaarLink" value="no" required>
+          <span>No, my bank account is not linked with Aadhaar</span>
+        </label>
+      </div>
+      <p id="aadhaarMessage" class="message"></p>
+    </section>
+
+    <!-- Government Job Status Section -->
+    <section class="section govt-job-section">
+      <div class="subhead"><i class="fas fa-briefcase"></i> Government Job Status</div>
+      <p class="section-description">
+        Please let us know if you, any of your family members, or your spouse have a government job.
+      </p>
+
+      <section id="govtJobForm" class="govt-job-form">
+        <!-- Yes/No Options -->
+        <div class="radio-group">
+          <label class="radio">
+            <input type="radio" name="govtJob" value="yes" required>
+            <span>Yes</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="govtJob" value="no" required>
+            <span>No</span>
+          </label>
+        </div>
+
+        <!-- Confirmation / Rejection Message -->
+        <p id="govtJobMessage" class="message"></p>
+      </section>
+    </section>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button type="reset" class="btn secondary"><i class="fas fa-undo"></i> Reset Form</button>
+      <button type="submit" class="btn primary submit-btn"><i class="fas fa-robot"></i> Get AI Recommendations</button>
+    </div>
+  </form>
+  <script src="js/ai.js"></script>
+</body>
+</html>

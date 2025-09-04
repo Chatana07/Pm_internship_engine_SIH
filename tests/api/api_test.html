@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>API Test</h1>
+    <button onclick="testAPI()">Test AI Recommendation API</button>
+    <div id="result"></div>
+
+    <script>
+        async function testAPI() {
+            const testData = {
+                "name": "John Doe",
+                "citizenship": "Indian",
+                "age": 22,
+                "eduMin": "B.Tech Computer Science",
+                "skills": "Python, Django, HTML, CSS, JavaScript",
+                "domain": "Web Development",
+                "location": "Bangalore",
+                "duration": "12 Months",
+                "edu": "Not in full-time",
+                "income": "Up to ₹8,00,000",
+                "aadhaarLink": "yes",
+                "govtJob": "no"
+            };
+
+            try {
+                const response = await fetch('http://localhost:5000/ai_recommend', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(testData)
+                });
+
+                const result = await response.json();
+                document.getElementById('result').innerHTML = `
+                    <h2>Success!</h2>
+                    <p>Status: ${response.status}</p>
+                    <pre>${JSON.stringify(result, null, 2)}</pre>
+                `;
+            } catch (error) {
+                document.getElementById('result').innerHTML = `
+                    <h2>Error</h2>
+                    <p>${error.message}</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
